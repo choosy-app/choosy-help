@@ -10,8 +10,19 @@
 <body>
 
 	<h1>Choosy Help: Custom <abbr title="Application Programming Interface">API</abbr> methods</h1>
-	
-	TODO
+
+	<div id="create">
+		<h2>Creating custom API methods</h2>
+		<p>To create a custom API method you need to create an <a href="../../settings/advanced.html">advanced behaviour rule</a> with an API method criterion:</p>
+		<ol>
+			<li>Create a new advanced behaviour rule by clicking on the plus button below the advanced behaviour rules list.</li>
+			<li>
+				Change the type of the second row in the rule editor from &ldquo;Web address&rdquo; to &ldquo;Custom API method&rdquo;. The row should look like this:
+				<img src="../../images/rule_editor_custom_api.png" alt="Screenshot of a custom API method row in the advanced behaviour rule editor" /></li>
+			<li>Specify the behaviour you want to associate with your custom API method in the same way you would for any other advanced behaviour rule (see the section on <a href="../../settings/advanced.html#edit-behaviour">behaviour of advanced rules</a> for more information)</li>
+			<li>Specify any other criteria you want to apply. You might want to create several rules for the same custom API method, each with different additional criteria, e.g. a method called <code>edit</code> might have one rule to define its default behaviour and another to define its behaviour when the shift key is held down. (Advanced behaviour rules are applied in order, so if you do have multiple rules for the same method you should put the more specific rules before the more general ones.)</li>
+		</ol>
+	</div>
 
 </body>
 
