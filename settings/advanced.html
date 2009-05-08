@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Choosy Help: Advanced behaviour settings</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+	<h1>Choosy Help: Advanced behaviour settings</h1>
+
+	<p>
+		This page describes the settings on Choosy's &ldquo;Advanced&rdquo; tab. To find these settings
+		open System Preferences, click on the Choosy icon and then click on the Advanced tab.
+	</p>
+
+	<img src="../images/settings_advanced.png" alt="A screenshot of Choosy's advanced settings tab" />
+	
+	<p>
+		Advanced behaviour rules allow you to set up specific behaviours that will be triggered in specific
+		circumstances.
+	</p>
+	
+	<ol>
+		<li><a href="#edit">Adding and editing rules</a></li>
+		<li><a href="#ordering">Ordering rules</a></li>
+		<li><a href="#disabling">Disabling rules</a></li>
+	</ol>
+	
+	<div id="edit">
+		<h2>Adding and editing rules</h2>
+		<p>
+			To add a rule, click on the plus button below the list of rules.
+		</p>
+		<p>
+			To edit a rule, select the rule in the list and then click the &ldquo;Edit selected rule&rdquo;
+			button on the right hand side below the list.
+		</p>
+		<p>
+			When adding or editing rules this window will be displayed:
+		</p>
+		<img 
+			src="../images/settings_advanced_edit.png" 
+			alt="A screenshot of Choosy's editing interface for advanced behaviour rules" />
+		
+		
+		<p>
+			This window contains three groups of options:
+		</p>
+		
+		<ol>
+			<li><a href="#edit-general">General rule settings</a></li>
+			<li><a href="#edit-rule">When Choosy should use this rule</a></li>
+			<li><a href="#edit-behaviour">What Choosy should do when it uses this rule</a></li>
+		</ol>
+		
+		<div id="edit-general">
+			<h3>General rule settings</h3>
+			
+			<dl>
+				<dt>Title</dt>
+				<dd>
+					<p>
+						The title setting is located at the top of the rule editing window.	It allows you to
+						give the rule a name that will be displayed in the rules list. Choose something specific 
+						enough to distinguish this from other rules.
+					</p>
+				</dd>
+				<dt>Enabled</dt>
+				<dd>
+					<p>
+						The enabled checkbox is located at the bottom of the rule editting window. This allows
+						you to disable rules without deleting them. If a rule is not enabled (i.e. if this box
+						is not checked) then Choosy will ignore the rule.
+					</p>
+				</dd>
+			</dl>
+		</div>
+		
+		<div id="edit-rule">
+			<h3>When Choosy should use this rule</h3>
+		
+			<p>
+				This section allows you to define the conditions that must be met in order for Choosy to 
+				use this rule.
+			</p>
+			
+			<p>
+				The first row of the rule editor lets you select what type of rule it is, and which of the
+				rules criteria (<em>any</em>, <em>all</em> or <em>none</em>) must be met for the rule to be
+				triggered:<br/>
+				<img 
+					src="../images/rule_editor_type.png" 
+					alt="A screenshot of the first row of the rule editor" />
+			</p>
+			
+			<p>
+				The subsequent rows of the rule editor show the different criteria that make up the rule.
+				You can add new criteria by clicking on the plus button at the end of any row, and you can
+				remove a criteron by clicking on the minus button at the end of its row:<br/>
+				<img 
+					src="../images/rule_editor_web_address.png" 
+					alt="A screenshot of a criteron row in the rule editor" />
+			</p>
+			
+			<p>
+				The dropdown list at the beginning of the row lets you select what this criterion will match.
+				The rest of the options in the row will depend on what type of criterion it is. Some types
+				will have several options, others will just have a simple text box where you can type in a
+				value.
+			</p>
+			
+			<p>
+				The following types of criteria are available:
+			</p>
+			
+			<dl>
+				<dt>Web address</dt>
+				<dd>
+					<img 
+						src="../images/rule_editor_web_address.png" 
+						alt="A screenshot of a web address criteron row in the rule editor" />
+					<p>
+						This allows rules to be set up for certain web sites, or groups of web sites. For
+						example you could use this criteria to set up a rule that sends all links to 
+						google.com to Firefox.
+					</p>
+					<p>
+						Web address criteria are very flexible: You can match exact addresses, addresses
+						that start with, end with or contain certain words or even addresses that match
+						patterns and regular expressions. The 
+						<a href="../settings/advanced/urls.html">web address rules</a> section describes
+						these options in more detail.
+					</p>
+				</dd>
+				
+				<dt>Source application</dt>
+				<dd>
+					<img 
+						src="../images/rule_editor_source_app.png" 
+						alt="A screenshot of a source application criteron row in the rule editor" />
+					<p>
+						This allows rules to be created that will be triggered when you click on a link in a
+						specific application. The browse button lets you pick an application from your 
+						Applications folder (or elsewhere on your Mac).
+					<p>
+					<p>
+						By selecting &ldquo;<em>is not</em>&rdquo; in the second dropdown list, you can also
+						create rules that target links from all source applications except for the application
+						selected in this row.
+					</p>
+				</dd>
+				
+				<dt>Link type</dt>
+				<dd>
+					<img 
+						src="../images/rule_editor_link_type.png" 
+						alt="A screenshot of a link type criteron row in the rule editor" />
+					<p>
+						Link type lets you select from the following options:
+					</p>
+					<ul>
+						<li>a link to a website</li>
+						<li>an HTML file on your computer</li>
+					</ul>
+					<p>
+						This lets you set up rules that only apply either to HTML files on your computer, or
+						to links to websites. For example you might want to set up a custom prompt for HTML
+						files on your computer that includes editing tools that wouldn't be able to open
+						normal web links.
+					</p>
+				</dd>
+				
+				<dt>Number of running browsers</dt>
+				<dd>
+					<img 
+						src="../images/rule_editor_running_browsers.png" 
+						alt="A screenshot of a running browsers criteron row in the rule editor" />
+					<p>
+						This lets you set up rules that only trigger when a certain number of browsers are
+						running, or when more than or less than a certain number of browsers are running. 
+						The second dropdown list lets you select from the following options:
+					</p>
+					<ul>
+						<li>is</li>
+						<li>is not</li>
+						<li>is less than</li>
+						<li>is greater than</li>
+					</ul>
+					<p>
+						The third dropdown list lets you select a number from 0 to 10.
+					</p>
+					<p>
+						When you click on a link the number of running browsers is calculated as the number
+						of applications from your <a href="../settings/browsers.html">browsers list</a> that
+						are currently running.
+					</p>
+				</dd>
+				
+				<dt>Modifier keys</dt>
+				<dd>
+					<img 
+						src="../images/rule_editor_modifier_keys.png" 
+						alt="A screenshot of a modifier keys criteron row in the rule editor" />
+					<p>
+						This type of criteria lets you set up rules that are only triggered when you are
+						holding down a modifier key or a combination of modifier keys when you click on 
+						the link.
+					</p>
+					<p>
+						This is useful for behaviours that you only want to occur sometimes. For example
+						you could set up your <a href="../settings/behaviour.html">behaviour settings</a>
+						to never prompt you to select a browser, and then set up an advanced behaviour 
+						rule to prompt you to select from all browsers when you hold shift while clicking
+						on a link.
+					</p>
+					<p>
+						Modifier keys criteria can use combinations of the following keys:
+					</p>
+					<ul>
+						<li>&#x21E7; Shift</li>
+						<li>&#x2303; Control</li>
+						<li>&#x2318; Command (sometimes called &ldquo;Apple&rdquo;)</li>
+						<li>&#x2325; Option (sometimes called &ldquo;alt&rdquo;)</li>
+						<li>&#x21E5; Tab</li>
+						<li>&#x238B; Escape</li>
+					</ul>
+				</dd>
+				
+				<dt>Custom <acronym title="Application Programming Interface">API</acronym> method</dt>
+				<dd>
+					<img 
+						src="../images/rule_editor_custom_api.png" 
+						alt="A screenshot of a custom API method criteron row in the rule editor" />
+					<p>
+						Custom API methods let you extend Choosy's API and add your own behaviours to it.
+					</p>
+					<p>
+						If you were to create a custom API method called &ldquo;my.rule&rdquo; you would
+						trigger it in the same way as any other API method, e.g. by loading the URL
+						<code>x-choosy://my.rule/http://www.google.com</code>
+					</p>
+					<p>
+						The <a href="../settings/advanced/customapi.html">custom API methods</a> page 
+						contains more information about creating and using your own custom API methods.
+					</p>
+				</dd>
+			</dl>
+
+		</div>
+
+		<div id="edit-behaviour">
+			<h3>What Choosy should do when it uses this rule</h3>
+			
+			<p>
+				At the bottom of the rule editing window are the rule's behaviour settings. This is where you
+				tell Choosy what to do when all the rule's criteria match the link that is being clicked.
+			</p>
+			
+			<p>
+				The following behaviours are available:
+			</p>
+			
+			<dl>
+				<dt>Use the default behaviour</dt>
+				<dd>
+					Choosy will act in accordance with your <a href="../settings/behaviour.html">behaviour
+					settings</a>, just as it would have done if no advanced behaviour rules had been triggered.
+				</dd>
+				
+				<dt>Use my favourite browser</dt>
+				<dd>
+					Choosy will use the browser at the top of your 
+					<a href="../settings/browsers.html">browsers list</a>.
+				</dd>
+				
+				<dt>Use the best running browser</dt>
+				<dd>
+					Choosy will use the running browser closest to the top of your
+					<a href="../settings/browsers.html">browsers list</a>.
+				</dd>
+				
+				<dt>Prompt to select from all browsers</dt>
+				<dd>
+					Choosy will prompt you to select from all the browsers in your
+					<a href="../settings/browsers.html">browsers list</a>.
+				</dd>
+				
+				<dt>Prompt to select from running browsers</dt>
+				<dd>
+					Choosy will prompt you to select from all the browsers in your
+					<a href="../settings/browsers.html">browsers list</a> that are currently running.
+				</dd>
+				
+				<dt>Prompt to select from these browsers&hellip;</dt>
+				<dd>
+					<p>					
+						Choosy will prompt you to select from a custom list of browsers that you set up only
+						for this rule. When you select this option an interface very similar to the 
+						<a href="../settings/browsers.html">browsers list</a> will appear where you can set
+						up a custom browser list.
+					</p>
+					<img 
+						src="../images/settings_advanced_behaviour_custom.png"
+						alt="A screenshot of Choosy's &quot;prompt to select from these browsers&quot; interface"
+						/>
+				</dd>
+				
+				<dt>Always use this browser&hellip;</dt>
+				<dd>
+					<p>
+						Choosy will always use the same browser. When you select this option an interface will
+						appear that allows you to select the browser that Choosy should always use with this 
+						rule.
+					</p>
+					<img 
+						src="../images/settings_advanced_behaviour_specific.png"
+						alt="A screenshot of Choosy's &quot;always use this browser&quot; interface"
+						/>
+				</dd>
+			</dl>
+			
+		</div>
+
+	</div>
+	
+	<div id="ordering">
+		<h2>Ordering rules</h2>
+		<p>
+			The order of your behaviour rules is important. When more than one rule matches the current situation
+			Choosy will use the rule that is nearest to the top of the list. This means that a very general rule
+			would take priority over a very specific rule when both rules match but the general rule is higher
+			up the list.
+		</p>
+		<p>
+			To change the order of the rules just drag and drop each rule into a new position.
+		</p>
+	</div>
+	
+	<div id="disabling">
+		<h2>Disabling rules</h2>
+		
+		<p>
+			The checkboxes in the list of rules allow you to disable rules without removing them completely. If a
+			rule's checkbox is not checked then Choosy will ignore that rule.
+		</p>
+	</div>
+
+</body>
+
+</html>

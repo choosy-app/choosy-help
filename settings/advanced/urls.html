@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Choosy Help: Web address rules</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+	<h1>Choosy Help: Web address rules</h1>
+	
+	<p>
+		You can create advanced behaviour rules that are triggered by clicking on a link to a web
+		address that matches certain criteria.
+	</p>
+	
+	<p>
+		The following types of web address matching are availble:
+	</p>
+	
+	<dl>
+		<dt>is</dt>
+		<dd>
+			Matches the whole URL exactly. Note that this includes the protocol at the start of the URL (e.g. 
+			<em>http://</em> or <em>https://</em>)
+		</dd>
+		
+		<dt>is not</dt>
+		<dd>
+			Matches any URL that is not exactly the same as the URL defined in the rule. Note that this includes the 
+			protocol at the start of the URL (e.g. <em>http://</em> or <em>https://</em>)
+		</dd>
+		
+		<dt>contains</dt>
+		<dd>
+			Matches any URL that contains the string defined in the rule. For example, if the rule was &ldquo;contains
+			facebook&rdquo; matching addresses would include <em>http://www.facebook.com/</em> and
+			<em>http://example.com/facebook</em>
+		</dd>
+		
+		<dt>begins with</dt>
+		<dd>
+			Matches any URL that begins with the string defined in the rule. Note that this includes the protocol at 
+			the start of the URL (e.g. <em>http://</em> or <em>https://</em>). For example, if the rule was 
+			&ldquo;begins with http://www.google.&rdquo; matching addresses would include 
+			<em>http://www.google.com/</em>, <em>http://www.google.co.uk/</em> and 
+			<em>http://www.google.com/search?q=choosy</em>
+		</dd>
+		
+		<dt>ends with</dt>
+		<dd>
+			Matches any URL that begins with the string defined in the rule. For example, if the rule was &ldquo;ends
+			with .pdf&rdquo; it would match any direct links to PDF files.
+		</dd>
+		
+		<dt>is like</dt>
+		<dd>
+			This type of address matching allows you to define simple patterns using wildcard characters.
+			
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Character</th>
+						<th scope="col">Matches</th>
+						<th scope="col">Example</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>?</td>
+						<td>Any single character</td>
+						<td>
+							The pattern <em>a?c</em> 
+							would match <em>abc</em>
+							but not <em>ac</em> or <em>abbc</em>
+						</td>
+					</tr>
+					<tr>
+						<td>*</td>
+						<td>Zero or more characters</td>
+						<td>
+							The pattern <em>a*c</em> 
+							would match <em>ac</em>, <em>abc</em> and <em>abbc</em>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</dd>
+		
+		<dt>matches regular expression</dt>
+		<dd>
+			This type of address matching allows you to define complex patterns using regular expressions. If you are
+			not already familiar with regular expressions there are various websites with indepth tutorials, several of
+			which are links from the <a href="http://en.wikipedia.org/wiki/Regular_Expressions">Wikipedia article on 
+			regular expressions</a>. Choosy uses the ICU version of regular expressions, you can find documentation on the 
+			<a href="http://userguide.icu-project.org/strings/regexp" title="ICU Regular Expressions documentation">ICU 
+			project website</a>).
+		</dd>
+	</dl>
+
+</body>
+
+</html>
