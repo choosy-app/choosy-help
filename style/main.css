@@ -1,0 +1,41 @@
+html,
+body {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family:"Lucida Grande",Geneva,Arial,Verdana,sans-serif;
+	font-size:small;
+	color:#444;
+	padding:1em 2em;
+}
+
+h1 {
+	background-color:#7F7F7F;
+	background-image:url('../images/icon.png');
+	background-position:99% 50%;
+	background-repeat:no-repeat;
+	color:#fff;
+	font-size:2em;
+	margin:0 -0.5em 1em;
+	padding:0.6em 60px 0.6em 0.5em;
+	-webkit-border-radius:0.8em;
+	-moz-border-radius:0.8em;
+}
+
+a {
+	color:#2E85B4;
+	text-decoration:none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	text-decoration:underline;
+}
+
+p.breadcrumbs {
+	margin:0 0 0.5em;
+	font-size:0.8em;
+}
