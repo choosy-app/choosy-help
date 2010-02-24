@@ -31,6 +31,7 @@
 	<ol>
 		<li><a href="#running">When one or more browsers are running</a></li>
 		<li><a href="#normal">When no browsers are running</a></li>
+		<li><a href="#short">When an URL shortening service has been used</a></li>
 	</ol>
 	
 	<div id="running">
@@ -98,6 +99,74 @@
 			</dd>
 		</dl>
 		
+	</div>
+
+	<div id="short">
+		<h2>When an URL shortening service has been used</h2>
+		
+		<p>
+			This setting defines what will happen when you click on a link to a URL shortening
+			service like bit.ly or tinyURL.
+		</p>
+		
+		<p>
+			If you turn on URL expansion it will only take effect when the browser prompt is displayed
+			and the &ldquo;Display the URL in the prompt&rdquo; setting is enabled. Choosy will then
+			ask the URL shortening service for the full length URL and replace the short URL displayed
+			in the prompt with the full version.
+		</p>
+		
+		<dl>
+			<dt>Never expand URLs</dt>
+			<dd>
+				Choosy will never try to expand URLs for you.
+			</dd>
+			
+			<dt>Only expand known short URLs (bit.ly, tinyurl etc.)</dt>
+			<dd>
+				Choosy will only try to expand URLs for you if they are from a known URL shortening service.
+				See below for more information about which services are supported.
+			</dd>
+			
+			<dt>Try to expand all URLs</dt>
+			<dd>
+				Choosy will make a request to all URLs that it opens to see if they respond by redirecting to
+				another website.
+			</dd>
+		</dl>
+		
+		<h3>Supported URL shortening services</h3>
+		
+		<ul>
+			<li>tinyurl.com</li>
+			<li>bit.ly</li>
+			<li>post.ly</li>
+			<li>is.gd</li>
+			<li>j.mp</li>
+			<li>tr.im</li>
+			<li>goo.gl</li>
+			<li>flic.kr</li>
+			<li>4sq.com</li>
+			<li>gowal.la</li>
+			<li>gbrck.com</li>
+		</ul>
+		
+		<h3>Adding more URL shortening services</h3>
+		
+		<p>
+			You can add more URL shortening services to Choosy by creating a property list file that lists
+			their domains.
+		</p>
+		
+		<ol>
+			<li>Open <em>Property List Editor</em> in <em>/Applications/Utilities</em>. It will create a new file for you.</li>
+			<li>Select the only row in the table (the key column should say <em>Root</em>)</li>
+			<li>Change the type from <em>Dictionary</em> to <em>Array</em></li>
+			<li>Press the <em>Add Child</em> button in the toolbar</li>
+			<li>Enter the domain you want to add in the value column</li>
+			<li>To add more domains, select the <em>Root</em> row again and repeat steps 4 and 5</li>
+			<li>Save the file to <em>~/Library/Application Support/Choosy/short_urls.plist</em></li>
+		</ol>
 	</div>
 
 </body>
