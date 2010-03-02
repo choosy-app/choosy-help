@@ -158,13 +158,26 @@
 		</p>
 		
 		<ol>
-			<li>Open <em>Property List Editor</em> in <em>/Applications/Utilities</em>. It will create a new file for you.</li>
-			<li>Select the only row in the table (the key column should say <em>Root</em>)</li>
-			<li>Change the type from <em>Dictionary</em> to <em>Array</em></li>
-			<li>Press the <em>Add Child</em> button in the toolbar</li>
-			<li>Enter the domain you want to add in the value column</li>
-			<li>To add more domains, select the <em>Root</em> row again and repeat steps 4 and 5</li>
-			<li>Save the file to <em>~/Library/Application Support/Choosy/short_urls.plist</em></li>
+			<li>
+				Copy and paste the following code into a new TextEdit file:
+				<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;array&gt;
+  &lt;string&gt;example.org&lt;/string&gt;
+&lt;/array&gt;
+&lt;/plist&gt;</code></pre>
+			</li>
+			<li>Replace <code>example.org</code> with the URL shortener that you want to use</li>
+			<li>
+				Add any other shorteners on subsequent lines, e.g.:
+				<pre><code>  &lt;string&gt;example.org&lt;/string&gt;
+  &lt;string&gt;example.com&lt;/string&gt;</code></pre>
+			</li>
+			<li>
+				Save the file to <em>/Users/you/Library/Application Support/Choosy/short_urls.plist</em>
+				(replacing <em>you</em> with your own username)
+			</li>
 		</ol>
 	</div>
 
