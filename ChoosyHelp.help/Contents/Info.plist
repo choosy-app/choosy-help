@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>en-gb</string>
+  <key>CFBundleIdentifier</key>
+  <string>com.choosyosx.Choosy.help</string>
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6.0</string>
+  <key>CFBundlePackageType</key>
+  <string>BNDL</string>
+  <key>CFBundleSignature</key>
+  <string>hbwr</string>
+  <key>CFBundleName</key>
+  <string>ChoosyHelp</string>
+  <key>CFBundleShortVersionString</key>
+  <string>1.2</string>
+  <key>HPDBookAccessPath</key>
+  <string>index.html</string>
+  <key>HPDBookIndexPath</key>
+  <string>ChoosyHelp.helpindex</string>
+  <key>HPDBookTitle</key>
+  <string>Choosy Help</string>
+  <key>HPDBookType</key>
+  <string>3</string>
+  <key>HPDBookIconPath</key>
+  <string>images/icon.png</string>
+</dict>
+</plist>
