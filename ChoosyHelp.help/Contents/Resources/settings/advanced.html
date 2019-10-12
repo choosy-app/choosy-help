@@ -21,7 +21,7 @@
 
 	<p>
 		This page describes the settings on Choosy's &ldquo;Advanced&rdquo; tab. To find these settings
-		open System Preferences, click on the Choosy icon and then click on the Advanced tab.
+		launch the Choosy app (from Finder, Launchpad, etc.) and then click on the Advanced tab.
 	</p>
 	
 	<p>
@@ -41,7 +41,7 @@
 			To add a rule, click on the plus button below the list of rules.
 		</p>
 		<p>
-			To edit a rule, select the rule in the list and then click the &ldquo;Edit selected rule&rdquo;
+			To edit a rule double click on the rule in the list, or select the rule in the list and then click the &ldquo;Edit selected rule&rdquo;
 			button on the right hand side below the list.
 		</p>
 		<p>
@@ -70,7 +70,7 @@
 				<dt>Title</dt>
 				<dd>
 					<p>
-						The title setting is located at the top of the rule editing window.	It allows you to
+						The title setting is located at the top of the rule editing window. It allows you to
 						give the rule a name that will be displayed in the rules list. Choose something specific 
 						enough to distinguish this from other rules.
 					</p>
@@ -254,7 +254,7 @@
 					<p>
 						If you were to create a rule that responded to a custom API method called
 						&ldquo;my.rule&rdquo; you would trigger it in the same way as any other API
-						method, e.g. by loading the URL <code>x-choosy://my.rule/http://www.google.com</code>
+						method, e.g. by loading the URL <code>x-choosy://my.rule/https://www.google.com</code>
 					</p>
 					<p>
 						The <a href="../settings/advanced/customapi.html">custom API methods</a> page 
@@ -315,6 +315,8 @@
 				<dd>
 					Choosy will use the running browser closest to the top of your
 					<a href="../settings/browsers.html">browsers list</a>.
+					If no browsers are running, Choosy will use the browser at the top
+					of your <a href="../settings/browsers.html">browsers list</a>.
 				</dd>
 				
 				<dt>Prompt to select from all browsers</dt>
@@ -327,11 +329,14 @@
 				<dd>
 					Choosy will prompt you to select from all the browsers in your
 					<a href="../settings/browsers.html">browsers list</a> that are currently running.
+					If no browsers are running, Choosy will prompt you to select from all
+					of the browsers in
+					your <a href="../settings/browsers.html">browsers list</a>.
 				</dd>
 				
 				<dt>Prompt to select from these browsers&hellip;</dt>
 				<dd>
-					<p>					
+					<p>
 						Choosy will prompt you to select from a custom list of browsers that you set up only
 						for this rule. When you select this option an interface very similar to the 
 						<a href="../settings/browsers.html">browsers list</a> will appear where you can set

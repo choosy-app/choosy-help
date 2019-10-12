@@ -31,30 +31,30 @@
 	<dl>
 		<dt>is</dt>
 		<dd>
-			Matches the whole URL exactly. Note that this includes the protocol at the start of the URL (e.g. 
-			<code>http://</code> or <code>https://</code>)
+			Matches the whole URL exactly. Note that this includes the protocol at the start of the URL (i.e.
+			<code>https://</code> or <code>http://</code>)
 		</dd>
 		
 		<dt>is not</dt>
 		<dd>
 			Matches any URL that is not exactly the same as the URL defined in the rule. Note that this includes the 
-			protocol at the start of the URL (e.g. <code>http://</code> or <code>https://</code>)
+			protocol at the start of the URL (i.e. <code>https://</code> or <code>http://</code>)
 		</dd>
 		
 		<dt>contains</dt>
 		<dd>
 			Matches any URL that contains the string defined in the rule. For example, if the rule was &ldquo;contains
 			<code>facebook</code>&rdquo; matching addresses would include <code>https://www.facebook.com/</code> and
-			<code>http://example.com/facebook</code>
+			<code>https://example.com/facebook</code>
 		</dd>
 		
 		<dt>begins with</dt>
 		<dd>
 			Matches any URL that begins with the string defined in the rule. Note that this includes the protocol at 
-			the start of the URL (e.g. <code>http://</code> or <code>https://</code>). For example, if the rule was
-			&ldquo;begins with <code>http://www.google.</code>&rdquo; matching addresses would include
-			<code>http://www.google.com/</code>, <code>http://www.google.co.uk/</code> and
-			<code>http://www.google.com/search?q=choosy</code>
+			the start of the URL (i.e. <code>https://</code> or <code>http://</code>). For example, if the rule was
+			&ldquo;begins with <code>https://www.google.</code>&rdquo; matching addresses would include
+			<code>https://www.google.com/</code>, <code>https://www.google.co.uk/</code> and
+			<code>https://www.google.com/search?q=choosy</code>
 		</dd>
 		
 		<dt>ends with</dt>
@@ -101,7 +101,7 @@
 		<dd>
 			This type of address matching allows you to define complex patterns using regular expressions. If you are
 			not already familiar with regular expressions there are various web sites with indepth tutorials, several of
-			which are linked from the <a href="http://en.wikipedia.org/wiki/Regular_Expressions">Wikipedia article on
+			which are linked from the <a href="https://en.wikipedia.org/wiki/Regular_expression">Wikipedia article on
 			regular expressions</a>. Choosy uses the ICU version of regular expressions, you can find documentation on the 
 			<a href="http://userguide.icu-project.org/strings/regexp" title="ICU Regular Expressions documentation">ICU 
 			project web site</a>.
