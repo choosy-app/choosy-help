@@ -20,20 +20,95 @@
 
 	<p>There are two main ways of using Choosy's functionality from within your browser:</p>
 	<ul>
-		<li><a href="#plugins">Browser plugins</a></li>
+		<li><a href="#extensions">Browser extensions</a></li>
 		<li><a href="#bookmarklets">Bookmarklets</a></li>
 	</ul>
 
-	<div id="plugins">
-		<h2>Browser plugins</h2>
-		<p>Browser plugins provide greater integration with a browser. Choosy plugins usually add an option to the menu that appears when you right-click on a link, allowing you to open that link in another browser using Choosy.</p>
-		<p>The downside of plugins is that they are specific to an individual browser, so you will need to install a plugin for each browser that you regularly use.</p>
-		<p>There is a <a href="https://www.choosyosx.com/browsers#plugins">list of available plugins on the Choosy web site</a>.</p>
+	<div id="extensions">
+		<h2>Browser extensions</h2>
+		<p>
+			Browser extensions allow you to open a link from one browser in another.
+			When you have a Choosy browser extension installed, your browser will
+			gain two features:
+		</p>
+		<ul>
+			<li>
+				A Choosy button in the browser's menu bar, which will open the Choosy
+				prompt for the page that's currently open.
+			</li>
+			<li>
+				A Choosy option in the menu when you right-click on a link, so you can
+				open that link in a different browser.
+			</li>
+		</ul>
+		<p>
+			Extensions are available for <i>Safari</i>, <i>Google Chrome</i>,
+			<i>Firefox</i> and <i>Opera</i>. How they are installed and configured
+			varies from browser to browser.
+		</p>
+
+		<h3>Safari</h3>
+		<p>
+			Choosy has a built-in Safari App Extension, which means that the Safari
+			extension is installed and ready to go as soon as you launch Choosy
+			(v2.1 or later).
+		</p>
+		<p>
+			Safari App Extensions are disabled by default, so before you can use it
+			you will need to enable it in the Safari preferences:
+		</p>
+		<ol>
+			<li>Launch Safari</li>
+			<li>
+				Open the preferences, either from the <kbd>Safari</kbd> menu, or by
+				pressing <kbd><kbd>cmd</kbd><kbd>,</kbd></kbd>
+			</li>
+			<li>
+				Select the <kbd>Extensions</kbd> tab
+			</li>
+			<li>Check the box next to <i>Choosy</i> in the list of extensions</li>
+		</ol>
+
+		<h3>Google Chrome</h3>
+		<p>
+			Google Chrome allows third-party apps, like Choosy, to automatically
+			install an extension from the Chrome Web Store.
+		</p>
+		<p>
+			When you first launch Choosy (v2.1 or later), it will install a
+			configuration file telling Google Chrome where to find the Choosy
+			extension.
+		</p>
+		<p>
+			The next time you restart Google Chrome, you will be prompted to enable
+			the extension.
+		</p>
+		<p>
+			After that initial prompt, if you want to enable or disable the Choosy
+			extension in Chrome, you can visit <code>chrome://extensions</code>
+			in Google Chrome.
+		</p>
+		<p>
+			If you remove the extension from Google Chrome, Choosy won't attempt
+			to reinstall it. If you change your mind, you can find the
+			<a href="https://chrome.google.com/webstore/detail/choosy/iebmekaahjkpockmnmdkjelghgjemfap">
+				Choosy extension in the Chrome Web Store</a>.
+		</p>
+
+		<h3>Firefox &amp; Opera</h3>
+		<p>
+			Firefox and Opera both support extensions, but recommend that third-party
+			apps, like Choosy, don't attempt to install them automatically.
+		</p>
+		<p>
+			You can find links to these extensions on the
+			<a href="https://www.choosyosx.com/browsers">Choosy web site's browsers page</a>.
+		</p>
 	</div>
 
 	<div id="bookmarklets">
 		<h2>Bookmarklets</h2>
-		<p>Bookmarklets are links that you can add to the bookmarks bar of a browser. Rather than linking a web page they run a small script.  The Choosy bookmarklets allow you to open the page you are currently looking at in another browser using Choosy.  They don't provide as much integration as plugins, but they will work the same in almost any browser.</p>
+		<p>Bookmarklets are links that you can add to the bookmarks bar of a browser. Rather than linking a web page they run a small script.  The Choosy bookmarklets allow you to open the page you are currently looking at in another browser using Choosy.  They don't provide as much integration as extensions, but they will work the same in almost any browser.</p>
 		<p>You can find the <a href="https://www.choosyosx.com/browsers#bookmarklets">bookmarklets on the Choosy web site</a> and drag them into your browser's bookmarks bar from there.</p>
 	</div>
 
