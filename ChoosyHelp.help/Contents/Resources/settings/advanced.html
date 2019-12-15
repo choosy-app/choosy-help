@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>Choosy Help: Advanced behaviour settings</title>
+	<title>Choosy Help: Advanced settings</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="../style/main.css" type="text/css" media="all" />
 </head>
@@ -17,391 +17,148 @@
 		Settings /
 	</p>
 
-	<h1>Choosy Help: Advanced behaviour settings</h1>
+	<h1>Choosy Help: Advanced settings</h1>
 
 	<p>
 		This page describes the settings on Choosy's &ldquo;Advanced&rdquo; tab. To find these settings
 		launch the Choosy app (from Finder, Launchpad, etc.) and then click on the Advanced tab.
 	</p>
 	
-	<p>
-		Advanced behaviour rules allow you to set up specific behaviours that will be triggered in specific
-		circumstances.
-	</p>
-	
 	<ol>
-		<li><a href="#edit">Adding and editing rules</a></li>
-		<li><a href="#ordering">Ordering rules</a></li>
-		<li><a href="#disabling">Disabling rules</a></li>
+		<li><a href="#start-at-login">Start Choosy at login</a></li>
+		<li><a href="#menu-bar">Display Choosy icon in the menu bar</a></li>
+		<li><a href="#short">Expanding short URLs in the prompt</a></li>
 	</ol>
-	
-	<div id="edit">
-		<h2>Adding and editing rules</h2>
+
+	<div id="start-at-login">
+		<h2>Start Choosy at login</h2>
 		<p>
-			To add a rule, click on the plus button below the list of rules.
+			Enable this option to have Choosy start whenever you login to your Mac.
+			If you disable this option, Choosy will start up the first time you
+			click on a link. This option is probably most useful when paired
+			with the <i>Display Choosy icon in the menu bar</i> option (see below).
 		</p>
+	</div>
+
+	<div id="menu-bar">
+		<h2>Display Choosy icon in the menu bar</h2>
 		<p>
-			To edit a rule double click on the rule in the list, or select the rule in the list and then click the &ldquo;Edit selected rule&rdquo;
-			button on the right hand side below the list.
+			Allows you to display a Choosy icon at the top right of your screen in the menu bar. This
+			gives you access to a menu which allows you to quickly
+			launch browsers and access Choosy's settings. Note that the menu bar icon will only be
+			displayed while Choosy is running, so you will probably want to use
+			this setting in conjunction with the <i>start Choosy at login</i> option.
 		</p>
-		<p>
-			When adding or editing rules this window will be displayed:
-		</p>
-		<img 
-			src="../images/settings_advanced_edit.png" 
-			alt="A screenshot of Choosy's editing interface for advanced behaviour rules"
-			width="708" height="726" />
+	</div>
+
+	<div id="short">
+		<h2>Expanding short URLs in the prompt</h2>
 		
+		<p>
+			When Choosy is displaying a URL in the prompt, it can optionally try to
+			expand a short URL (bit.ly, tinyurl.com, etc.) to the full URL it points
+			to.
+		</p>
 		
 		<p>
-			This window contains three groups of options:
+			Short URLs are expanded by making a request to the short URL, and seeing
+			where it redirects to. This has two important implications:
+		</p>
+
+		<ol>
+			<li>
+				Choosy will have to make network requests to expand short URLs.
+				If you enable this feature, and you run firewall software on your Mac
+				you may be prompted to allow Choosy to make network requests.
+			</li>
+			<li>
+				Resolving a short URL can be quite slow, depending on a huge number of
+				factors (how fast your Internet connection is, how quickly the URL
+				shortening service responds, etc.). Because this can be time consuming
+				Choosy only expands short URLs when displaying them in the prompt, it
+				will not try to expand short URLs before applying your rules. For
+				example, if you have a rule to open links containing
+				<code>apple.com</code> in Safari, a <code>bit.ly</code> link that
+				resolves to <code>apple.com</code> will not trigger that rule.
+			</li>
+		</ol>
+
+		<p>
+			There are three options for expanding short URLs:
+		</p>
+
+		<dl>
+			<dt>Never expand URLs</dt>
+			<dd>
+				Choosy will never try to expand URLs for you.
+			</dd>
+			
+			<dt>Only expand known short URLs (bit.ly, tinyurl etc.)</dt>
+			<dd>
+				Choosy will only try to expand URLs for you if they are from a known URL shortening service.
+				See below for more information about which services are supported.
+			</dd>
+			
+			<dt>Try to expand all URLs</dt>
+			<dd>
+				Choosy will make a request to all URLs that it opens to see if they respond by redirecting to
+				another web site.
+			</dd>
+		</dl>
+		
+		<h3>Supported URL shortening services</h3>
+		
+		<ul>
+			<li>4sq.com</li>
+			<li>amzn.to</li>
+			<li>bit.ly</li>
+			<li>cl.ly</li>
+			<li>flic.kr</li>
+			<li>gbrck.com</li>
+			<li>gdzl.la</li>
+			<li>goo.gl</li>
+			<li>gowal.la</li>
+			<li>gu.com</li>
+			<li>is.gd</li>
+			<li>j.mp</li>
+			<li>ow.ly</li>
+			<li>post.ly</li>
+			<li>t.co</li>
+			<li>tinyurl.com</li>
+			<li>tr.im</li>
+			<li>youtu.be</li>
+		</ul>
+		
+		<h3>Adding more URL shortening services</h3>
+		
+		<p>
+			You can add more URL shortening services to Choosy by creating a property list file that lists
+			their domains.
 		</p>
 		
 		<ol>
-			<li><a href="#edit-general">General rule settings</a></li>
-			<li><a href="#edit-rule">When Choosy should use this rule</a></li>
-			<li><a href="#edit-behaviour">What Choosy should do when it uses this rule</a></li>
+			<li>
+				Copy and paste the following code into a new TextEdit file:
+				<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;array&gt;
+  &lt;string&gt;example.org&lt;/string&gt;
+&lt;/array&gt;
+&lt;/plist&gt;</code></pre>
+			</li>
+			<li>Replace <code>example.org</code> with the URL shortener that you want to use</li>
+			<li>
+				Add any other shorteners on subsequent lines, e.g.:
+				<pre><code>  &lt;string&gt;example.org&lt;/string&gt;
+  &lt;string&gt;example.com&lt;/string&gt;</code></pre>
+			</li>
+			<li>
+				Save the file to <code>/Users/<var>you</var>/Library/Application Support/Choosy/short_urls.plist</code>
+				(replacing <var>you</var> with your own username)
+			</li>
 		</ol>
-		
-		<div id="edit-general">
-			<h3>General rule settings</h3>
-			
-			<dl>
-				<dt>Title</dt>
-				<dd>
-					<p>
-						The title setting is located at the top of the rule editing window. It allows you to
-						give the rule a name that will be displayed in the rules list. Choose something specific 
-						enough to distinguish this from other rules.
-					</p>
-				</dd>
-				<dt>Enabled</dt>
-				<dd>
-					<p>
-						The enabled checkbox is located at the bottom of the rule editting window. This allows
-						you to disable rules without deleting them. If a rule is not enabled (i.e. if this box
-						is not checked) then Choosy will ignore the rule.
-					</p>
-				</dd>
-			</dl>
-		</div>
-		
-		<div id="edit-rule">
-			<h3>When Choosy should use this rule</h3>
-		
-			<p>
-				This section allows you to define the conditions that must be met in order for Choosy to 
-				use this rule.
-			</p>
-			
-			<p>
-				The first row of the rule editor lets you select what type of rule it is, and which of the
-				rules criteria (<em>any</em>, <em>all</em> or <em>none</em>) must be met for the rule to be
-				triggered:<br/>
-				<img 
-					src="../images/rule_editor_type.png" 
-					alt="A screenshot of the first row of the rule editor"
-					width="503" height="31" />
-			</p>
-			
-			<p>
-				The subsequent rows of the rule editor show the different criteria that make up the rule.
-				You can add new criteria by clicking on the plus button at the end of any row, and you can
-				remove a criteron by clicking on the minus button at the end of its row:<br/>
-				<img 
-					src="../images/rule_editor_web_address.png" 
-					alt="A screenshot of a criteron row in the rule editor"
-					width="503" height="31" />
-			</p>
-			
-			<p>
-				The dropdown list at the beginning of the row lets you select what this criterion will match.
-				The rest of the options in the row will depend on what type of criterion it is. Some types
-				will have several options, others will have a text box where you can type in a value.
-			</p>
-			
-			<p>
-				The following types of criteria are available:
-			</p>
-			
-			<dl>
-				<dt>Web address</dt>
-				<dd>
-					<img 
-						src="../images/rule_editor_web_address.png" 
-						alt="A screenshot of a web address criteron row in the rule editor"
-						width="503" height="31" />
-					<p>
-						This allows rules to be set up for certain web sites, or groups of web sites. For
-						example you could use this type of criterion to set up a rule that sends all links
-						to <code>google.com</code> to <i>Firefox</i>.
-					</p>
-					<p>
-						Web address criteria are very flexible: You can match exact addresses, addresses
-						that start with, end with or contain certain words or even addresses that match
-						patterns and regular expressions. The 
-						<a href="../settings/advanced/urls.html">web address rules</a> section describes
-						these options in more detail.
-					</p>
-				</dd>
-				
-				<dt>Source application</dt>
-				<dd>
-					<img 
-						src="../images/rule_editor_source_app.png" 
-						alt="A screenshot of a source application criteron row in the rule editor"
-						width="503" height="31" />
-					<p>
-						This allows rules to be created that will be triggered when you click on a link in a
-						specific application. The browse button lets you pick an application from your 
-						Applications folder (or elsewhere on your Mac).
-					</p>
-					<p>
-						By selecting &ldquo;<em>is not</em>&rdquo; in the second dropdown list, you can also
-						create rules that target links from all source applications except for the application
-						selected in this row.
-					</p>
-				</dd>
-				
-				<dt>Link type</dt>
-				<dd>
-					<img 
-						src="../images/rule_editor_link_type.png" 
-						alt="A screenshot of a link type criteron row in the rule editor"
-						width="503" height="31" />
-					<p>
-						Link type lets you select from the following options:
-					</p>
-					<ul>
-						<li>a link to a web site</li>
-						<li>an HTML file on your computer</li>
-					</ul>
-					<p>
-						This lets you set up rules that only apply either to HTML files on your computer, or
-						to links to web sites. For example you might want to set up a custom prompt for HTML
-						files on your computer that includes editing tools that wouldn't be able to open
-						normal web links.
-					</p>
-				</dd>
-				
-				<dt>Number of running browsers</dt>
-				<dd>
-					<img 
-						src="../images/rule_editor_running_browsers.png" 
-						alt="A screenshot of a running browsers criteron row in the rule editor"
-						width="503" height="31" />
-					<p>
-						This lets you set up rules that only trigger when a certain number of browsers are
-						running, or when more than or less than a certain number of browsers are running. 
-						The second dropdown list lets you select from the following options:
-					</p>
-					<ul>
-						<li>is</li>
-						<li>is not</li>
-						<li>is less than</li>
-						<li>is greater than</li>
-					</ul>
-					<p>
-						The third dropdown list lets you select a number from 0 to 10.
-					</p>
-					<p>
-						When you click on a link the number of running browsers is calculated as the number
-						of applications from your <a href="../settings/browsers.html">browsers list</a> that
-						are currently running.
-					</p>
-				</dd>
-				
-				<dt>Modifier keys</dt>
-				<dd>
-					<img 
-						src="../images/rule_editor_modifier_keys.png" 
-						alt="A screenshot of a modifier keys criteron row in the rule editor"
-						width="503" height="31" />
-					<p>
-						This type of criterion lets you set up rules that are only triggered when you are
-						holding down a modifier key or a combination of modifier keys when you click on 
-						the link.
-					</p>
-					<p>
-						This is useful for behaviours that you only want to occur sometimes. For example
-						you could set up your <a href="../settings/behaviour.html">behaviour settings</a>
-						to never prompt you to select a browser, and then set up an advanced behaviour 
-						rule to prompt you to select from all browsers when you hold shift while clicking
-						on a link.
-					</p>
-					<p>
-						Modifier keys criteria can use combinations of the following keys:
-					</p>
-					<ul>
-						<li>&#x21E7; Shift</li>
-						<li>&#x2303; Control</li>
-						<li>&#x2318; Command (sometimes called &ldquo;Apple&rdquo;)</li>
-						<li>&#x2325; Option (sometimes called &ldquo;alt&rdquo;)</li>
-						<li>&#x21E5; Tab</li>
-						<li>&#x238B; Escape</li>
-					</ul>
-				</dd>
-				
-				<dt>Custom <acronym title="Application Programming Interface">API</acronym> method</dt>
-				<dd>
-					<img 
-						src="../images/rule_editor_custom_api.png" 
-						alt="A screenshot of a custom API method criteron row in the rule editor"
-						width="503" height="31" />
-					<p>
-						Custom API methods let you extend Choosy's API and add your own behaviours to it.
-					</p>
-					<p>
-						If you were to create a rule that responded to a custom API method called
-						&ldquo;my.rule&rdquo; you would trigger it in the same way as any other API
-						method, e.g. by loading the URL <code>x-choosy://my.rule/https://www.google.com</code>
-					</p>
-					<p>
-						The <a href="../settings/advanced/customapi.html">custom API methods</a> page 
-						contains more information about creating and using your own custom API methods.
-					</p>
-				</dd>
-				
-				<dt>URL shortening service</dt>
-				<dd>
-					<img 
-						src="../images/rule_editor_short_url.png" 
-						alt="A screenshot of a short URL criteron row in the rule editor"
-						width="503" height="31" />
-					<p>
-						This type of criteria allow you to define rules that are only triggered when Choosy
-						opens a link to a URL shortening service, like bit.ly or tinyurl.
-					</p>
-					<p>
-						This is useful when combined with the <a href="../settings/behaviour.html#short">short URL 
-						expansion</a> settings. You can tell Choosy to always prompt when opening short URLs so that
-						you will be able to check the expanded URL in the prompt before you open the site in a browser.
-					</p>
-					<p>
-						A list of supported URL shortening services, and instructions for adding your own are in the
-						<a href="../settings/behaviour.html#short">short URL expansion section on the behaviour page</a>.
-					</p>
-				</dd>
-			</dl>
-
-		</div>
-
-		<div id="edit-behaviour">
-			<h3>What Choosy should do when it uses this rule</h3>
-			
-			<p>
-				At the bottom of the rule editing window are the rule's behaviour settings. This is where you
-				tell Choosy what to do when all the rule's criteria match the link that is being clicked.
-			</p>
-			
-			<p>
-				The following behaviours are available:
-			</p>
-			
-			<dl>
-				<dt>Use the default behaviour</dt>
-				<dd>
-					Choosy will act in accordance with your <a href="../settings/behaviour.html">behaviour
-					settings</a>, just as it would have done if no advanced behaviour rules had been triggered.
-				</dd>
-				
-				<dt>Use my favourite browser</dt>
-				<dd>
-					Choosy will use the browser at the top of your 
-					<a href="../settings/browsers.html">browsers list</a>.
-				</dd>
-				
-				<dt>Use the best running browser</dt>
-				<dd>
-					Choosy will use the running browser closest to the top of your
-					<a href="../settings/browsers.html">browsers list</a>.
-					If no browsers are running, Choosy will use the browser at the top
-					of your <a href="../settings/browsers.html">browsers list</a>.
-				</dd>
-				
-				<dt>Prompt to select from all browsers</dt>
-				<dd>
-					Choosy will prompt you to select from all the browsers in your
-					<a href="../settings/browsers.html">browsers list</a>.
-				</dd>
-				
-				<dt>Prompt to select from running browsers</dt>
-				<dd>
-					Choosy will prompt you to select from all the browsers in your
-					<a href="../settings/browsers.html">browsers list</a> that are currently running.
-					If no browsers are running, Choosy will prompt you to select from all
-					of the browsers in
-					your <a href="../settings/browsers.html">browsers list</a>.
-				</dd>
-				
-				<dt>Prompt to select from these browsers&hellip;</dt>
-				<dd>
-					<p>
-						Choosy will prompt you to select from a custom list of browsers that you set up only
-						for this rule. When you select this option an interface very similar to the 
-						<a href="../settings/browsers.html">browsers list</a> will appear where you can set
-						up a custom browser list.
-					</p>
-					<img 
-						src="../images/settings_advanced_behaviour_custom.png"
-						alt="A screenshot of Choosy's &quot;prompt to select from these browsers&quot; interface"
-						width="526" height="223" />
-				</dd>
-				
-				<dt>Always use this browser&hellip;</dt>
-				<dd>
-					<p>
-						Choosy will always use the same browser. When you select this option an interface will
-						appear that allows you to select the browser that Choosy should always use with this 
-						rule.
-					</p>
-					<img 
-						src="../images/settings_advanced_behaviour_specific.png"
-						alt="A screenshot of Choosy's &quot;always use this browser&quot; interface"
-						width="530" height="107" />
-				</dd>
-
-				<dt>Use all of these browsers&hellip;</dt>
-				<dd>
-					<p>
-						Choosy will open all of the browsers you specify. The browsers will be opened in the order
-						that you specify. When you select this option an interface very similar to the
-						<a href="../settings/browsers.html">browsers list</a> will appear where you can set
-						up a custom browser list.
-					</p>
-					<img
-						src="../images/settings_advanced_behaviour_all.png"
-						alt="A screenshot of Choosy's &quot;use all of these browsers&quot; interface"
-						width="526" height="222" />
-				</dd>
-			</dl>
-			
-		</div>
-
 	</div>
-	
-	<div id="ordering">
-		<h2>Ordering rules</h2>
-		<p>
-			The order of your behaviour rules is important. When more than one rule matches the current situation
-			Choosy will use the rule that is nearest to the top of the list. This means that a very general rule
-			would take priority over a very specific rule when both rules match but the general rule is higher
-			up the list.
-		</p>
-		<p>
-			To change the order of the rules, drag and drop each rule into a new position.
-		</p>
-	</div>
-	
-	<div id="disabling">
-		<h2>Disabling rules</h2>
-		
-		<p>
-			The checkboxes in the list of rules allow you to disable rules without removing them completely. If a
-			rule's checkbox is not checked then Choosy will ignore that rule.
-		</p>
-	</div>
-
 </body>
 
 </html>

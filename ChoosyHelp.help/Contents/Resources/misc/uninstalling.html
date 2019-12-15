@@ -20,10 +20,22 @@
 
 	<p>To remove Choosy from your system, follow these steps:</p>
 
-	<ul>
+	<ol>
 		<li>Open System Preference, and click <i>General</i>.</li>
 		<li>Change the <i>Default web browser</i> setting to something other than Choosy, e.g. <i>Safari</i> or <i>Google Chrome</i>.</li>
-		<li>Find `Choosy.app` in your Applications folder, and drag it to the trash.</li>
+		<li>Find <i>Choosy.app</i> in your Applications folder, and drag it to the trash.</li>
+	</ol>
+
+	<p>
+		If you want to completely remove all traces of Choosy you can also remove
+		Choosy's configuration files and user defaults. Note that if you do this,
+		and later change your mind a re-install Choosy, you will have to configure
+		it again.
+	</p>
+
+	<ol>
+		<li>Remove settings files, by dragging the folder at <code>/Users/<var>you</var>/Application Support/Choosy</code> to the trash (replacing <var>you</var> with your username).</li>
+		<li>Remove settings managed by macOS, by opening a Terminal and running the command <code>defaults delete com.choosyosx.choosy</code></li>
 	</ol>
 
 </body>
