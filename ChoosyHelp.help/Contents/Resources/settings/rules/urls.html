@@ -60,12 +60,15 @@
 		<dt>ends with</dt>
 		<dd>
 			Matches any URL that begins with the string defined in the rule. For example, if the rule was &ldquo;ends
-			with <code>.pdf</code>&rdquo; it would match any direct links to PDF files.
+      with <code>.pdf</code>&rdquo; it would match URLs like <code>https://example.com/download.pdf</code>, but
+      not <code>https://example.com/download.pdf?key=123</code>.
 		</dd>
 		
 		<dt>is like</dt>
 		<dd>
 			This type of address matching allows you to define simple patterns using wildcard characters.
+      The pattern must match the whole URL, which means you might need to add `*` character to
+      the beginning or end of the pattern.
 			
 			<table>
 				<thead>
@@ -102,9 +105,11 @@
 			This type of address matching allows you to define complex patterns using regular expressions. If you are
 			not already familiar with regular expressions there are various web sites with indepth tutorials, several of
 			which are linked from the <a href="https://en.wikipedia.org/wiki/Regular_expression">Wikipedia article on
-			regular expressions</a>. Choosy uses the ICU version of regular expressions, you can find documentation on the 
-			<a href="http://userguide.icu-project.org/strings/regexp" title="ICU Regular Expressions documentation">ICU 
-			project web site</a>.
+			regular expressions</a>. Choosy uses the ICU version of regular expressions; you can find documentation on the 
+			<a href="https://unicode-org.github.io/icu/userguide/strings/regexp.html" title="ICU Regular Expressions documentation">ICU 
+			project web site</a>. Your regular expression must match the whole pattern, which means you might need to add
+      <code>.*</code> to the beginning or end of the expression (if you're used to working with regular expressions,
+      you can think of the pattern as implicitly starting with <code>^</code> and ending with <code>$</code>).
 		</dd>
 	</dl>
 
