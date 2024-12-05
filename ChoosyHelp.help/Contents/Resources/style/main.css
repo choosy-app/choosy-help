@@ -66,6 +66,11 @@ table th {
 	background-color:#eee;
 }
 
+pre {
+  background-color: #eee;
+  padding: 1em;
+}
+
 p {
 	margin:0 0 1em 0;
 }

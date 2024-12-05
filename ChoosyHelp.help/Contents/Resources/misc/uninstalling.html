@@ -39,6 +39,19 @@
 		<li>Remove settings managed by macOS, by opening a Terminal and running the command <code>defaults delete com.choosyosx.choosy</code></li>
 	</ol>
 
+  <p>
+    Choosy also creates some files to allow the browser extensions to talk to
+    the app, and to automatically install the browser extension in some
+    browsers. You can find all of these files by running the following shell
+    commands in a Terminal:
+  </p>
+
+  <pre><code>ls $HOME/Library/Application\ Support/*/*/NativeMessagingHosts/com.choosyosx.*
+ls $HOME/Library/Application\ Support/*/NativeMessagingHosts/com.choosyosx.*
+
+ls $HOME/Library/Application\ Support/*/*/External\ Extensions/baecahhpgcpccohoeipmdkkbemhjhfmc.json
+ls $HOME/Library/Application\ Support/*/External\ Extensions/baecahhpgcpccohoeipmdkkbemhjhfmc.json</code></pre>
+
 </body>
 
 </html>
